@@ -1,0 +1,71 @@
+.Login_container{
+    width: 100%;
+
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+
+}
+
+.Login_form{
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;   
+}
+.Login_Link{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: flex-start;
+    align-items:flex-start;
+    margin-top: -10px;
+}
+.home_input{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.Home_form{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.profile_logo{
+    margin-left: 90px;
+    width: 100px;
+    height: 100px;
+}
+.reset_showemail{
+    margin-top: -50px;
+}
+.Login_ResetLink{
+    margin-top: 10px;
+    margin-left: -130px;
+    margin-bottom: 20px;
+}
+.reset_otp{
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card{
+    border: 2px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 370px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.card >h2{
+    height: 20px;
+}
