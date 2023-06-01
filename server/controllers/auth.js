@@ -67,7 +67,7 @@ export const postImage = async (req, res) => {
   console.log(req.body);
   console.log(req.file);
 
-  const { userId } = req.body;
+  const { name,userId } = req.body;
   const imageBuffer = req.file.buffer;
   // if (!req.file) {
   //   return res.status(400).send("No file uploaded.");
@@ -76,6 +76,7 @@ export const postImage = async (req, res) => {
     
     const newUser = new Posts({
      userId,
+     name,
      uploadedImages: imageBuffer,
     });
     // save the users registration data in database
@@ -102,4 +103,11 @@ export const getPostsById = async (req, res) => {
   }
 };
 
+
+// logout
+export const Logout = (req,res)=>{
+  console.log("we are in logout")
+  res.clearCookie("jwttoken",{path:"/"})
+  res.status(200).send("user logout")
+}
 
