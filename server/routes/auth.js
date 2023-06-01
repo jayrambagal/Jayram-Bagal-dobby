@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer"
 const upload = multer();
-import { login, register,getDataById,postImage ,getPostsById} from "../controllers/auth.js";
+import { login, register,getDataById,postImage ,getPostsById,Logout} from "../controllers/auth.js";
 
 const router = express.Router();
 
@@ -10,6 +10,7 @@ router.post('/register',register)
 router.post("/login", login);
 router.get("/:id",getDataById)
 router.get("/posts/:id",getPostsById)
+router.get("/logout",Logout)
 
 
 router.get('/login', (req,res)=>{
