@@ -57,7 +57,7 @@ const Home = () => {
     });
   
     // Redirect the user to the login page or any other desired page
-    window.location.href = '/login'; // Replace '/login' with the desired URL
+    window.location.href = '/'; // Replace '/login' with the desired URL
   }
 
   const handleFileChange = (event) => {

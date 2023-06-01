@@ -10,6 +10,11 @@ export const register = async (req, res) => {
     if (!email || !password) {
       res.status(400).json({ message: "plz provide email and password" });
     }
+    const userFind = User.find({email:email})
+
+    if (userFind){
+      res.status(422).send("user Already exists")
+    }
     // encrypt the password
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
