@@ -60,17 +60,12 @@ const Home = () => {
     window.location.href = '/login'; // Replace '/login' with the desired URL
   }
 
-  if (!user) {
-    return  <div style={{width:"100%", display:"flex",justifyContent:"center"}}><Box sx={{ display: 'flex' }}>
-    <CircularProgress />
-  </Box></div>
-  }
-
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
   
   const handleUpload = () => {
+    setUser(false)
     const formData = new FormData();
     formData.append("name", inputName);
     formData.append("userId", id);
@@ -86,12 +81,24 @@ const Home = () => {
           console.log("File uploaded successfully.");
         } else {
           console.error("Error uploading file.");
+          
         }
+        setUser(true)
       })
       .catch((error) => {
         console.error("Error:", error);
+        setUser(true)
       });
   };
+  
+
+  if (!user) {
+    return  <div style={{width:"100%", display:"flex",justifyContent:"center"}}><Box sx={{ display: 'flex' }}>
+    <CircularProgress />
+  </Box></div>
+  }
+
+ 
 
   
   return (
