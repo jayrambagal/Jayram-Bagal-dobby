@@ -19,7 +19,7 @@ const Register = () => {
           password: password,
         };
     
-        axios.post("http://localhost:8002/auth/register", user)
+        axios.post("https://dobby-lvab.onrender.com/auth/register", user)
           .then((response) => {
             console.log(response);
             window.alert("User Register Successfully")
