@@ -17,7 +17,7 @@ const Home = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8002/auth/posts/${id}`)
+    fetch(`https://dobby-lvab.onrender.com/auth/posts/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setImages(data);
@@ -26,7 +26,7 @@ const Home = () => {
         console.error("Error:", error);
       });
     console.log("id", id);
-  }, []);
+  }, [user]);
 
   const bufferToImageUrl = (buffer) => {
     const blob = new Blob([new Uint8Array(buffer.data)], {
@@ -38,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get(`http://localhost:8002/auth/${id}`);
+      const response = await axios.get(`https://dobby-lvab.onrender.com/auth/${id}`);
       console.log(response);
       console.log(response.data[0].email);
       setUser(response.data);
@@ -72,7 +72,7 @@ const Home = () => {
     formData.append("image", selectedFile);
     
 
-    fetch("http://localhost:8002/auth/uploads", {
+    fetch("https://dobby-lvab.onrender.com/auth/uploads", {
       method: "POST",
       body: formData,
     })
@@ -130,7 +130,7 @@ const Home = () => {
       <h2>Image Gallery for User </h2>
       <input
           type="text"
-          placeholder="Enter Image Name"
+          placeholder="search by name"
           value={inputNameSearch}
           onChange={(e)=>setInputNameSearch(e.target.value)}
         />
